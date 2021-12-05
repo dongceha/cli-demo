@@ -1,0 +1,16 @@
+{
+  "name": "dc_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cli.js",
+  "bin": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^8.3.0",
+    "screenshot-desktop": "^1.12.7"
+  }
+}
