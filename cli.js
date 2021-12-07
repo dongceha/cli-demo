@@ -23,6 +23,14 @@ console.log('====', hh, pp)
 
 // execSync('shutdown -s -t 60');
 // execSync('reboot');
-screenshot({filename: path.resolve('demo.png'), screen: 1}).then(img => {
-  console.log(img);
-})
+
+const cap = (index) => {
+  screenshot({filename: path.resolve(`demo-${index}.png`), screen: index}).then(img => {
+    console.log(img);
+    cap(index + 1);
+  }).catch(error => {
+    console.log('error===', error)
+  }) 
+}
+
+cap(0);
