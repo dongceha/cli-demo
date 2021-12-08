@@ -3,7 +3,11 @@
   "version": "1.0.1",
   "description": "",
   "main": "cli.js",
-  "bin": "cli.js",
+  "bin": {
+    "dc_capture": "./cli/capture.js",
+    "dc_trans": "./cli/translation.js",
+    "dc_md2png": "./cli/md2png.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +16,9 @@
   "dependencies": {
     "axios": "^0.24.0",
     "commander": "^8.3.0",
+    "inquirer": "^7.2.0",
+    "marked": "^1.1.0",
+    "puppeteer": "^4.0.0",
     "qs": "^6.10.2",
     "screenshot-desktop": "^1.12.7"
   }
