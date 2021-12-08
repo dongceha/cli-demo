@@ -1,6 +1,6 @@
 {
   "name": "dc_demo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "cli.js",
   "bin": "cli.js",
@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.24.0",
     "commander": "^8.3.0",
+    "qs": "^6.10.2",
     "screenshot-desktop": "^1.12.7"
   }
 }

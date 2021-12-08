@@ -5,6 +5,33 @@ const pkg = require('./package.json');
 const process = require('process');
 const screenshot = require('screenshot-desktop');
 const path = require('path');
+const axios = require('axios');
+const qs = require('qs');
+const MD5 = require('./md5');
+
+var appid = '';
+var key = '';
+var salt = (new Date).getTime();
+var query = '老师与学生聊天';
+// 多个query可以用\n连接  如 query='apple\norange\nbanana\npear'
+var from = 'zh';
+var to = 'en';
+var str1 = appid + query + salt +key;
+var sign = MD5(str1);
+
+
+axios.get('http://api.fanyi.baidu.com/api/trans/vip/translate', {
+  params: {
+    q: query,
+    appid: appid,
+    salt: salt,
+    from: from,
+    to: to,
+    sign: sign
+  }
+}).then(res => {
+  console.log('res=====', res.data);
+});
 
 program
   .version(pkg.version)
