@@ -62,6 +62,7 @@ module.exports = async (input, { output, width = 1000}) => {
   </html>`
   // await page.goto('https://www.baodu.com')
   await page.setContent(html)
-  await page.screenshot({path: output, fullPage: true})
+  await page.screenshot({path: `${output}.png`, fullPage: true})
+  await page.pdf({path: `${output}.pdf`, fullPage: true})
   await browser.close()
 }
